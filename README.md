@@ -5,9 +5,9 @@ Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liqui
 Mouaad:
 Ik heb een form gemaakt die ervoor zorgt dat de team naam verandert kan worden en dat heb kunnen doen door liquid en javascript:
 
-Liquid:
+~~~Liquid:
 
-~~{% for teamchange in teamchanges reversed %}
+{% for teamchange in teamchanges reversed %}
   {% if forloop.index == 1 %}
   <p>{{ teamchange.text }} </p>
   {% else %}
@@ -23,10 +23,10 @@ Liquid:
     <input type="text" name="text" required>
   </label>
     <button type="submit">press</button>
-</form>~~
+</form>
+~~~
 
-
-Javascript:
+~~~Javascript:
 
 ~~app.set('port', process.env.PORT || 8000)
 
@@ -71,4 +71,33 @@ app.get('/', async function (request, response) {
     
   })
 })
-~~
+
+app.post('/', async function (request, response) {
+
+  // Stuur een POST request naar de messages tabel
+  // Een POST request bevat ook extra parameters, naast een URL
+  await fetch('https://fdnd.directus.app/items/messages', {
+
+    // Overschrijf de standaard GET method, want ook hier gaan we iets veranderen op de server
+    method: 'POST',
+
+    // Geef de body mee als JSON string
+    body: JSON.stringify({
+      // Dit is zodat we ons bericht straks weer terug kunnen vinden met ons filter
+      for: `Team ${teamName}`,
+      // En dit zijn onze formuliervelden
+      from: request.body.from,
+      text: request.body.text
+    }),
+
+    // En vergeet deze HTTP headers niet: hiermee vertellen we de server dat we JSON doorsturen
+    // (In realistischere projecten zou je hier ook authentication headers of een sleutel meegeven)
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    }
+  });
+
+  // Stuur de browser daarna weer naar de homepage
+  response.redirect(303, '/')
+})
+~~~
