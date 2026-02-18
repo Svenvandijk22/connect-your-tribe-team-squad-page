@@ -3,8 +3,13 @@ import express from 'express'
 import { Liquid } from 'liquidjs';
 
 
+
+
+
+
+
 // Vul hier jullie team naam in
-const teamName = '';
+const teamName = 'teamjolly';
 
 
 const app = express()
@@ -76,9 +81,36 @@ app.post('/', async function (request, response) {
     }
   });
 
+
   // Stuur de browser daarna weer naar de homepage
   response.redirect(303, '/')
+
 })
+
+app.get('/photos', async function (request, response) {
+  const params = {
+    // fields: 'name,mugshot,squads.*',
+    // 'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+    // 'filter[squads][squad_id][name]': '1I',
+    // 'filter[squads][squad_id][cohort]': '2526',
+
+    'sort': 'name',
+    'fields': '*,squads.*',
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+    'filter[squads][squad_id][cohort]': '2526'
+  }
+
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
+
+  const personResponseJSON = await personResponse.json()
+  console.log(personResponse)
+
+  response.render('index.liquid', { persons: personResponseJSON.data })
+})
+
+
+
+
 
 
 app.set('port', process.env.PORT || 8000)
@@ -90,3 +122,32 @@ if (teamName == '') {
     console.log(`Application started on http://localhost:${app.get('port')}`)
   })
 }
+
+
+app.get('/za', async function (request, response) {
+ 
+  // Haal alle personen uit de WHOIS API op, van dit jaar, gesorteerd op naam
+  const params = {
+    // Sorteer op naam
+    'sort': '-name',
+
+    // Geef aan welke data je per persoon wil terugkrijgen
+    'fields': '*,squads.*',
+
+    // Combineer meerdere filters
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+    'filter[squads][squad_id][cohort]': '2526'
+  }
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
+ 
+  // En haal daarvan de JSON op
+  const personResponseJSON = await personResponse.json()
+ 
+  // personResponseJSON bevat gegevens van alle personen uit alle squads van dit jaar
+  // Toon eventueel alle data in de console
+  // console.log(personResponseJSON)
+ 
+  // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
+  // Geef ook de eerder opgehaalde squad data mee aan de view
+  response.render('index.liquid', {persons: personResponseJSON.data})
+})

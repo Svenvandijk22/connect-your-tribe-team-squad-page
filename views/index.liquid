@@ -1,22 +1,49 @@
-<h1>Zet 'm op team {{ teamName }}!</h1>
+{% render 'partials/head.liquid' %}
 
-<h2>test</h2>
+<header>
 
-{% for message in messages %}
-  <p>{{ message.from }}: {{ message.text }} @{{ message.created | date: '%d-%m-%Y %H:%M' }}</p>
-{% else %}
-  <p>Er zijn nog geen berichten voor dit team.</p>
+
+
+</header>
+
+
+<h1>Selecteer Speler</h1>
+
+
+  <a class="filter" href="/za" >Naam z → a</a>
+ 
+
+<main>
+  
+{% comment %} {% if person.mugshot %} {% endcomment %}
+  
+{% comment %} {% else %} {% endcomment %}
+ 
+{% comment %} {% endif %} {% endcomment %}
+
+ <ul class="galerij">
+{% for person in persons %}
+  {% if person.mugshot %}
+
+    <li class="fifa-kaart">
+      <p class="id">{{ person.id }}</p>
+      <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="{{ person.name }}">
+    </li>
+   
+   
+  {% else %}
+    <li class="fifa-kaart"> 
+       <p class="id">{{ person.id }}</p> 
+    <img src="/assets/voorbeeldfoto.png" alt="placeholder">  
+   </li>
+  {% endif %}
 {% endfor %}
 
-<h2>Voeg een bericht toe</h2>
-<form method="post" action="/">
-  <label>
-    Naam:
-    <input type="text" name="from" required>
-  </label>
-  <label>
-    Bericht:
-    <textarea name="text" required></textarea>
-  </label>
-  <button type="submit">Verstuur</button>
-</form>
+</ul>
+
+
+
+</main>
+
+{% render 'partials/foot.liquid' %}
+
