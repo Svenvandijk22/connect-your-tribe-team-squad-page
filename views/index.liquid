@@ -1,3 +1,6 @@
+{% render 'partials/head.liquid' %}
+
+
 {% for teamchange in teamchanges reversed %}
   {% if forloop.index == 1 %}
   <p>{{ teamchange.text }} </p>
@@ -15,5 +18,34 @@
   </label>
     <button type="submit">press</button>
 </form>
+
+
+<ul class="galerij">
+{% for person in persons %}
+  {% if person.mugshot %}
+
+    <li class="fifa-kaart">
+      <p class="id">{{ person.id }}</p>
+      <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="{{ person.name }}">
+    </li>
+   
+   
+  {% else %}
+    <li class="fifa-kaart"> 
+       <p class="id">{{ person.id }}</p> 
+    <img src="/assets/voorbeeldfoto.png" alt="placeholder">  
+   </li>
+  {% endif %}
+{% endfor %}
+
+</ul>
+
+
+
+</main>
+
+{% render 'partials/foot.liquid' %}
+
+
 
 

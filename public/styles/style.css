@@ -1,0 +1,151 @@
+body{
+
+background-color:#2F2F2F ;
+
+}
+
+
+h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.filter{
+    margin-left: 95px;
+    padding-bottom: 50px;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}
+
+ 
+main{
+  display:flex;
+  position: relative;
+}
+
+.galerij {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    height: 230px;
+    background-color: #3E3E3E;
+    gap: 30px;
+    width: 75%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    margin: 0 auto; 
+
+    anchor-name:--carousel;
+
+    &::scroll-button(*) {
+		position: absolute;
+		
+		position-anchor:--carousel;
+		
+		width:30px;
+		height: 30px;
+		
+		background-color:#D9D9D9;
+	
+		border:none;
+		
+		font:inherit;
+		
+		transition:.3s;
+  }
+
+    &::scroll-button(left) {
+		content: '←' / 'Previous';
+		color: white;
+		left: 30px;
+        top: 40%;
+		margin-inline-start:.5em;
+        background: none;
+        scale: 2;
+        cursor: pointer;;
+  }
+
+    &::scroll-button(right) {
+        content: '→' / 'Next';
+        color: white;
+        scale: 2;
+        background: none;
+        cursor: pointer;
+            
+        right: 30px;
+            top: 40%;
+            margin-inline-end:.5em;
+  }
+	
+	&::scroll-button(*):disabled {
+		opacity:.5;
+	}
+}
+
+.galerij::-webkit-scrollbar {
+  height: 4px;                     
+}
+
+.galerij::-webkit-scrollbar-thumb {
+  background: gold;
+}
+
+.fifa-kaart {
+    scroll-snap-align: center;
+    scroll-snap-stop:always;
+    scroll-snap-type: x mandatory;
+    transition: 0.5s ease-in-out;
+
+    margin-top: 30px;
+    padding: 10px;
+
+    justify-content: center;
+    /* horizontaal centreren */
+    align-items: center;
+
+    background: linear-gradient(to bottom right, #d4af37, #f8e7a0);
+    /* goud look */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 140px;
+    clip-path: polygon(20% 0%,
+            /* Linker schuine bovenhoek */
+            80% 0%,
+            /* Rechter schuine bovenhoek */
+            100% 15%,
+            /* Rechts onder de hoek */
+            100% 85%,
+            /* Rechts boven de punt */
+            50% 100%,
+            /* Punt onderin */
+            0% 85%,
+            /* Links boven de punt */
+            0% 15%
+            /* Links onder de hoek */
+        );
+
+        .id {
+            display: flex;
+            justify-content: center;
+            margin: 0 0 1rem 0;
+        }
+}
+
+.fifa-kaart:hover {
+    scale: 1.2;
+}
+
+
+img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    mix-blend-mode:multiply;
+}
