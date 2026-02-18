@@ -208,14 +208,27 @@ button{
 
 
 
-.voetbalveld{
-   width: 600px;
-        height: 400px;
+.upperlayout {
+  display: grid;
+  grid-template-columns: 1fr 60% 1fr;
 
-        background-image: url('/assets/voetbalveld.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+  .team-1{
+    grid-column: 1;
+  }
 
+  .voetbalveld{
+    grid-column: 2;
+    width: 600px;
+      height: 400px;
 
+          background-image: url('/assets/voetbalveld.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+  }
+
+  .team-jolly {
+    grid-column: 3;
+
+  }
 }
