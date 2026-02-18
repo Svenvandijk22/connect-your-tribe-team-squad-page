@@ -4,7 +4,11 @@ Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liqui
 **Beschrijving**
 
 Sven:
-Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft
+Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft met if els kan ik een voorbeeld foto erin zetten. Verder heb ik met de  parameters ingesteld om personen op te halen uit Directus. De personen worden alfabetisch gesorteerd op naam. Daarnaast worden alle gegevens van de persoon opgehaald.
+
+Er wordt ook gefilterd: alleen personen die in FDND Jaar 1 zitten en behoren tot cohort 2526 worden opgehaald.
+
+Hierdoor krijgen we een gesorteerde lijst van studenten uit het juiste studiejaar, inclusief hun squad gegevens.
 
 Mouaad:
 Ik heb een form gemaakt die ervoor zorgt dat de team naam verandert kan worden en dat heb kunnen doen door liquid en javascript:
