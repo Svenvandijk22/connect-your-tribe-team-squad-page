@@ -8,7 +8,7 @@
 
   {% for teamchange in teamchanges reversed %}
   {% if forloop.index == 1 %}
-  <h1>{{ teamchange.text }} </h1>
+  <h2>{{ teamchange.text }} </h2>
   {% else %}
             {% break %} <!-- De rest van de berichten na object 3 worden niet bekeken-->
         {% endif %}
@@ -23,7 +23,7 @@
 
   <div class="team-jolly">
 
-    <h1>Team Jolly</h1>
+    <h2>Team Jolly</h2>
 
   </div>
 
@@ -36,7 +36,7 @@
     <button type="submit">press</button>
 </form>
 
-<h2>Selecteer Speler</h1>
+<h1>Selecteer Speler</h1>
 
 
   <a class="filter" href="/za" >Naam z → a</a>
