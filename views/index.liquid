@@ -3,7 +3,7 @@
 
 {% for teamchange in teamchanges reversed %}
   {% if forloop.index == 1 %}
-  <p>{{ teamchange.text }} </p>
+  <h1>{{ teamchange.text }} </h1>
   {% else %}
             {% break %} <!-- De rest van de berichten na object 3 worden niet bekeken-->
         {% endif %}
