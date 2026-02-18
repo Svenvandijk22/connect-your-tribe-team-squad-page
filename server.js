@@ -31,8 +31,44 @@ if (teamName == '') {
   })
 }
 
+// app.get('/', async function (request, response) {
+//   const params = {
+//     // fields: 'name,mugshot,squads.*',
+//     // 'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+//     // 'filter[squads][squad_id][name]': '1I',
+//     // 'filter[squads][squad_id][cohort]': '2526',
+
+//     'sort': 'name',
+//     'fields': '*,squads.*',
+//     'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+//     'filter[squads][squad_id][cohort]': '2526'
+//   }
+
+//   const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
+
+//   const personResponseJSON = await personResponse.json()
+//   console.log(personResponse)
+
+//   response.render('index.liquid', { persons: personResponseJSON.data })
+// })
+
 
 app.get('/', async function (request, response) {
+  const personParams = {
+    // fields: 'name,mugshot,squads.*',
+    // 'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+    // 'filter[squads][squad_id][name]': '1I',
+    // 'filter[squads][squad_id][cohort]': '2526',
+
+    'sort': 'name',
+    'fields': '*,squads.*',
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
+    'filter[squads][squad_id][cohort]': '2526'
+  }
+
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(personParams))
+
+  const personResponseJSON = await personResponse.json()
 
   // Filter eerst de berichten die je wilt zien, net als bij personen
   // Deze tabel wordt gedeeld door iedereen, dus verzin zelf een handig filter,
@@ -61,6 +97,7 @@ app.get('/', async function (request, response) {
   response.render('index.liquid', {
     teamName: teamName,
     teamchanges: teamchangesResponseJSON.data,
+    persons: personResponseJSON.data,
     
   })
 })
@@ -94,26 +131,6 @@ app.post('/', async function (request, response) {
   response.redirect(303, '/')
 })
 
-app.get('/photos', async function (request, response) {
-  const params = {
-    // fields: 'name,mugshot,squads.*',
-    // 'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
-    // 'filter[squads][squad_id][name]': '1I',
-    // 'filter[squads][squad_id][cohort]': '2526',
-
-    'sort': 'name',
-    'fields': '*,squads.*',
-    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
-    'filter[squads][squad_id][cohort]': '2526'
-  }
-
-  const personResponse = await fetch('https://fdnd.directus.app/items/person/?' + new URLSearchParams(params))
-
-  const personResponseJSON = await personResponse.json()
-  console.log(personResponse)
-
-  response.render('index.liquid', { persons: personResponseJSON.data })
-})
 
 
 
