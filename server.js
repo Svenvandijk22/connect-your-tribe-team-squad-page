@@ -4,7 +4,7 @@ import { Liquid } from 'liquidjs';
 
 
 // Vul hier jullie team naam in
-const teamName = '';
+const teamName = 'Jolly';
 
 
 const app = express()
@@ -17,6 +17,19 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 app.use(express.urlencoded({extended: true}))
+
+
+
+
+app.set('port', process.env.PORT || 8000)
+
+if (teamName == '') {
+  console.log('Voeg eerst de naam van jullie team in de code toe.')
+} else {
+  app.listen(app.get('port'), function () {
+    console.log(`Application started on http://localhost:${app.get('port')}`)
+  })
+}
 
 
 app.get('/', async function (request, response) {
@@ -36,10 +49,10 @@ app.get('/', async function (request, response) {
   // console.log('API URL voor messages:', apiURL)
 
   // Haal daarna de messages data op
-  const messagesResponse = await fetch(apiURL)
+  const teamchangeResponse = await fetch(apiURL)
 
   // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-  const messagesResponseJSON = await messagesResponse.json()
+  const teamchangesResponseJSON = await teamchangeResponse.json()
 
   // Controleer eventueel de data in je console
   // console.log(messagesResponseJSON)
@@ -47,7 +60,8 @@ app.get('/', async function (request, response) {
   // En render de view met de messages
   response.render('index.liquid', {
     teamName: teamName,
-    messages: messagesResponseJSON.data
+    teamchanges: teamchangesResponseJSON.data,
+    
   })
 })
 
@@ -81,12 +95,4 @@ app.post('/', async function (request, response) {
 })
 
 
-app.set('port', process.env.PORT || 8000)
 
-if (teamName == '') {
-  console.log('Voeg eerst de naam van jullie team in de code toe.')
-} else {
-  app.listen(app.get('port'), function () {
-    console.log(`Application started on http://localhost:${app.get('port')}`)
-  })
-}
