@@ -1,7 +1,12 @@
 {% render 'partials/head.liquid' %}
 
 
-{% for teamchange in teamchanges reversed %}
+
+
+
+<section class="team-1">
+
+  {% for teamchange in teamchanges reversed %}
   {% if forloop.index == 1 %}
   <h1>{{ teamchange.text }} </h1>
   {% else %}
@@ -9,8 +14,16 @@
         {% endif %}
 {% endfor %}
 
+  </section>
 
 
+  <section class="voetbalveld">
+
+  </section>
+
+  <section class="team-jolly">
+
+  </section>
 
 
  
@@ -21,7 +34,7 @@
     <button type="submit">press</button>
 </form>
 
-<h1>Selecteer Speler</h1>
+<h2>Selecteer Speler</h1>
 
 
   <a class="filter" href="/za" >Naam z → a</a>

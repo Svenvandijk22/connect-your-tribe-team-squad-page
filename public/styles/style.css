@@ -16,6 +16,13 @@
     --font-size-xs: 11px;
 }
 
+@font-face {
+  font-family: 'fifafont';
+  src: url('/fonts/fifawelcome1.3.woff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body{
 
 background-color: var(--bg-color);
@@ -23,11 +30,13 @@ background-color: var(--bg-color);
 }
 
 
-h1{
+h2{
     font-size: var(--font-size-l);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'fifafont' ,Arial, Helvetica, sans-serif;
     color: var(--primairy-text-color);
     text-align: center;
+    letter-spacing: 1px;
+
 }
 
 .filter{
@@ -35,7 +44,7 @@ h1{
     padding-bottom: 50px;
     color: var(--primairy-text-color);
     font-size: --font-size-s;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'fifafont', Arial, Helvetica, sans-serif;
     text-decoration: none;
 
 }
@@ -58,6 +67,16 @@ main{
     overflow-y: hidden;
     scroll-behavior: smooth;
     margin: 0 auto; 
+
+
+    p{
+      color: white;
+      letter-spacing: 1px;
+
+      font-size:var(--font-size-m) ;
+      font-family:'fifafont' ,Arial, Helvetica, sans-serif;
+    
+    }
 
     anchor-name:--carousel;
 
@@ -160,6 +179,13 @@ main{
     scale: 1.2;
 }
 
+h1{
+  font-family: 'fifafont';
+color: white;
+letter-spacing: 1px;
+
+}
+
 
 img {
     object-fit: cover;
@@ -178,4 +204,18 @@ input::placeholder{
 button{
   background-color: black;
   color:white;
+}
+
+
+
+.voetbalveld{
+   width: 600px;
+        height: 400px;
+
+        background-image: url('/assets/voetbalveld.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
 }
