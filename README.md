@@ -1,10 +1,17 @@
 # Squad Page
 Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liquid
 
-**Beschrijving**
+# Beschrijving
 
-Sven:
+## Sven
 Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft met if els kan ik een voorbeeld foto erin zetten. Verder heb ik met de  parameters ingesteld om personen op te halen uit Directus. De personen worden alfabetisch gesorteerd op naam. Daarnaast worden alle gegevens van de persoon opgehaald.
+
+
+## galerij
+
+
+<img width="1823" height="593" alt="Schermopname (198)" src="https://github.com/user-attachments/assets/3bc598be-78af-4eae-8bff-e5f3b5b191ce" />
+
 
 
 
