@@ -4,7 +4,7 @@ Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liqui
 **Beschrijving**
 
 Sven:
-Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren
+Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft
 
 Mouaad:
 Ik heb een form gemaakt die ervoor zorgt dat de team naam verandert kan worden en dat heb kunnen doen door liquid en javascript:
