@@ -1,6 +1,10 @@
 # Squad Page
 Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liquid
 
+**Beschrijving**
+
+Sven:
+Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren
 
 Mouaad:
 Ik heb een form gemaakt die ervoor zorgt dat de team naam verandert kan worden en dat heb kunnen doen door liquid en javascript:
