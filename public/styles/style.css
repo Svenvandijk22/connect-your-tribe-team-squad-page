@@ -167,3 +167,15 @@ img {
     height: 80px;
     mix-blend-mode:multiply;
 }
+
+input{
+  background-color: gray;
+}
+
+input::placeholder{
+  color: black;
+}
+button{
+  background-color: black;
+  color:white;
+}
