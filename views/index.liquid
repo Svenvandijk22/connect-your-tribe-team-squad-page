@@ -1,75 +1,59 @@
 {% render 'partials/head.liquid' %}
 
-
-
 <section class="upperlayout">
+  <div class="team-1">
+    {% for teamchange in teamchanges reversed %}
+      {% if forloop.index == 1 %}
+        <h1 class="teamnaam">{{ teamchange.text }}</h1>
+      {% else %}
+        {% break %}
+        <!-- De rest van de berichten na object 3 worden niet bekeken -->
+      {% endif %}
+    {% endfor %}
 
-<div class="team-1">
-
-  {% for teamchange in teamchanges reversed %}
-  {% if forloop.index == 1 %}
-  <h2>{{ teamchange.text }} </h2>
-  {% else %}
-            {% break %} <!-- De rest van de berichten na object 3 worden niet bekeken-->
-        {% endif %}
-{% endfor %}
-
+    <ul id="team"></ul>
   </div>
 
-
-  <div class="voetbalveld">
-
-  </div>
+  <div class="voetbalveld"></div>
 
   <div class="team-jolly">
-
-    <h2>Team Jolly</h2>
-
+    <h2>Team {{teamName}}</h2>
+    {% for ourTeamMember in ourTeamMembers %}
+      {% comment %} <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="{{ person.name }}"> {% endcomment %}
+   <li class="fifa-kaart">
+          <p class="id">{{ person.id }}</p>
+          <img src="https://fdnd.directus.app/assets/{{ ourTeamMember.mugshot }}?width=500" alt="{{ ourTeamMember.name }}">
+        </li>
+    {% endfor %}
   </div>
-
 </section>
- 
-<form  method="POST" action="/">
-  
-    <input type="text" name="text" placeholder="Verzin een team naam" required>
-  
-    <button type="submit">press</button>
+<form method="POST" action="/">
+  <input type="text" name="text" placeholder="Verzin een team naam" required>
+
+  <button type="submit">opslaan</button>
 </form>
 
 <h1>Selecteer Speler</h1>
 
-
-  <a class="filter" href="/za" >Naam z → a</a>
- 
+<a class="filter" href="/za">Naam z → a</a>
 
 <main>
+  <ul class="galerij">
+    {% for person in persons %}
+      {% if person.mugshot %}
+        <li class="fifa-kaart">
+          <p class="id">{{ person.id }}</p>
+          <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="{{ person.name }}">
+        </li>
 
-<ul class="galerij">
-{% for person in persons %}
-  {% if person.mugshot %}
-
-    <li class="fifa-kaart">
-      <p class="id">{{ person.id }}</p>
-      <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}?width=500" alt="{{ person.name }}">
-    </li>
-   
-   
-  {% else %}
-    <li class="fifa-kaart"> 
-       <p class="id">{{ person.id }}</p> 
-    <img src="/assets/voorbeeldfoto.png" alt="placeholder">  
-   </li>
-  {% endif %}
-{% endfor %}
-
-</ul>
-
-
-
+      {% else %}
+        <li class="fifa-kaart">
+          <p class="id">{{ person.id }}</p>
+          <img src="/assets/voorbeeldfoto.png" alt="placeholder">
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </main>
 
 {% render 'partials/foot.liquid' %}
-
-
-
-
