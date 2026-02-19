@@ -5,8 +5,6 @@
   * [Installatie](#installatie)
 ## Beschrijving
 Wij hebben een fifa-thema squadpage gemaakt waarin je mensen van squad I en J kan selecteren in een team. Ook kan je op onze website een eigen team naam maken.
-## Kenmerken
-## Installatie
 
 ### Sven
 Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft met if els kan ik een voorbeeld foto erin zetten. Verder heb ik met de  parameters ingesteld om personen op te halen uit Directus. De personen worden alfabetisch gesorteerd op naam. Daarnaast worden alle gegevens van de persoon opgehaald. 
@@ -18,7 +16,6 @@ de bedoeling van de galerij is om spelers te kunnen selecteren
 <img width="1823" height="593" alt="Schermopname (198)" src="https://github.com/user-attachments/assets/3bc598be-78af-4eae-8bff-e5f3b5b191ce" />
 
 Deze JavaScript code zorgt ervoor dat spelers uit de galerij toegevoegd kunnen worden aan het team.Wanneer de pagina geladen is, kijkt de code naar alle spelerkaarten (.fifa-kaart).Elke kaart wordt klikbaar gemaakt. Als je op een speler klikt:
-
 
 
 
@@ -122,4 +119,7 @@ app.post('/', async function (request, response) {
 })
 ~~~
 ### Oumaima
-Ik heb me bezig gehouden met de styling en css. Ik heb custom properties aangemaakt
+Ik heb me bezig gehouden met de styling en css. We hebben gekozen om de squadpage na te maken van FIFA bij de spelersselectie. Er is gekozen voor een grid om de teams en de img van het voetbalveld uit elkaar te kunnen houden. Er is ook voor gekozen om met custom properties te werken.
+
+## Kenmerken
+## Installatie
