@@ -1,7 +1,7 @@
 
 
 # Beschrijving
-wij hebben een fifa thema squadpage gemaakt 
+wij hebben een fifa thema squadpage gemaakt waarin je mensen van squad I en J kan selecteren in een team ook kan je op onze website een eigen team naam maken
 
 ## Sven
 Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan selecteren. Eerst heb ik een loop gemaakt voor de img. For = loop door de lijst met personen f person.mugshot = check of die persoon een foto heeft met if els kan ik een voorbeeld foto erin zetten. Verder heb ik met de  parameters ingesteld om personen op te halen uit Directus. De personen worden alfabetisch gesorteerd op naam. Daarnaast worden alle gegevens van de persoon opgehaald. 
