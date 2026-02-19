@@ -8,7 +8,7 @@ Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan sele
 
 
 ## galerij
-
+de bedoeling van de galerij is om spelers te kunnen selecteren 
 
 <img width="1823" height="593" alt="Schermopname (198)" src="https://github.com/user-attachments/assets/3bc598be-78af-4eae-8bff-e5f3b5b191ce" />
 
