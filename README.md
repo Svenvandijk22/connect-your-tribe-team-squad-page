@@ -12,6 +12,8 @@ Ik heb me bezig gehouden met de galerij ik en de functie dat je spelers kan sele
 
 <img width="1823" height="593" alt="Schermopname (198)" src="https://github.com/user-attachments/assets/3bc598be-78af-4eae-8bff-e5f3b5b191ce" />
 
+Deze JavaScript code zorgt ervoor dat spelers uit de galerij toegevoegd kunnen worden aan het team.Wanneer de pagina geladen is, kijkt de code naar alle spelerkaarten (.fifa-kaart).Elke kaart wordt klikbaar gemaakt. Als je op een speler klikt:
+
 
 
 
