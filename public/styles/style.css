@@ -239,9 +239,11 @@ button {
   }
 
   .voetbalveld {
+    margin-top: 50px;
     grid-column: 2;
-    width: 600px;
-    height: 400px;
+    width: 80%;
+    height: 70%;
+    margin-left: 5%;
 
     background-image: url('/assets/voetbalveld.png');
     background-size: cover;
