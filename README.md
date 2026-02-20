@@ -1,8 +1,6 @@
 
 ## Inhoudsopgave
   * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
 ## Beschrijving
 Wij hebben een fifa-thema squadpage gemaakt waarin je mensen van squad I en J kan selecteren in een team. Ook kan je op onze website een eigen team naam maken.
 
@@ -119,7 +117,5 @@ app.post('/', async function (request, response) {
 })
 ~~~
 ### Oumaima
-Ik heb me bezig gehouden met de styling en css. We hebben gekozen om de squadpage na te maken van FIFA bij de spelersselectie. Er is gekozen voor een grid om de teams en de img van het voetbalveld uit elkaar te kunnen houden. Er is ook voor gekozen om met custom properties te werken.
+Ik heb me bezig gehouden met de styling en css. We hebben gekozen om de squadpage na te maken van FIFA bij de spelersselectie. Er is gekozen voor een grid om de teams en de img van het voetbalveld uit elkaar te kunnen houden. OP de section .upperlayout  zit grid-template-columns( 1fr 60% 1fr). Op de buitenste twee zitten containers met een fractie en het middelste met procenten voor het voetbalveld. Er is ook voor gekozen om met custom properties te werken voor de kleuren en de font-sizing.
 
-## Kenmerken
-## Installatie
