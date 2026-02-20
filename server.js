@@ -18,8 +18,16 @@ app.use(express.urlencoded({ extended: true }))
 
 // Homepage
 app.get('/', async function (request, response) {
+
+  let sort = request.params.sort
+  console.log(sort)
+
+  if(!sort) {
+    sort = 'name'
+  }
+
   const personParams = {
-    sort: 'name',
+    sort: sort,
     fields: '*,squads.*',
     'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1',
     'filter[squads][squad_id][cohort]': '2526'
